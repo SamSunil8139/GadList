@@ -6,4 +6,4 @@
 
 ###First project in angular js
 
-p[roject placed in github
+project placed in github

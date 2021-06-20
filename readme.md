@@ -1,7 +1,9 @@
-GadList
+#GadList
 
 -------------------------
 
-description
+##description
 
-First project in angular js
+###First project in angular js
+
+p[roject placed in github

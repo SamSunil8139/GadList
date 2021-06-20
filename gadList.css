@@ -34,7 +34,7 @@ ul
 }
 li
 {
-    outline: 1px solid black;
+    outline: 2px solid black;
     box-shadow: -7px 8px 67px 8px rgba(0,0,0,0.85);
     list-style-position: inside;
     padding: 10px;

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="gadList.css">
+    <title>gadList</title>
+</head>
+<body ng-app="gadList">
+    <div ng-controller="myCtrl">
+        <h1>GadList</h1>
+        <ul>
+        <li ng-repeat="x in items | filter:test">
+            {{x}}<span ng-click="remove($index)">&times;</span>
+        </li>
+        </ul>
+        <input ng-model="add"></br>
+        <button ng-click="addIt()">Add</button>
+        <input class="srch" ng-model="test" placeholder="Search">
+        <p>{{error}}</p>
+    </div>
+    <script>
+        var app = angular.module("gadList",[]);
+        app.controller("myCtrl",function($scope){
+            $scope.items = ["iphone","macbook","iwatch","ball point pen","DSLR","amazon echo"]
+            $scope.addIt = function () {
+                $scope.error=" "
+                if(!$scope.add){return;}
+                if($scope.items.indexOf($scope.add)==-1){
+                    $scope.items.push($scope.add);
+                }else{
+                    $scope.error = "item already exist"
+                }
+                
+            }
+            $scope.remove = function(x) {
+                $scope.error=" "
+                $scope.items.splice(x,1);
+            }
+            
+        });
+    </script>
+</body>
+</html>
